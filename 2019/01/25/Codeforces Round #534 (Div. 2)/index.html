@@ -4,24 +4,24 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
   
-    <title>Hello World | YQL&#39;blog</title>
+    <title>codeforces 534D | YQL&#39;blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="John Doe">
     
 
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="D. Game with modulo  分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。  最开始想的是直接1到2e9进行二分，发现会超过60次。12345678910111213141516171819202122232425262728293031323334353637383">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/01/24/hello-world/index.html">
+<meta property="og:title" content="codeforces 534D">
+<meta property="og:url" content="http://yoursite.com/2019/01/25/Codeforces Round #534 (Div. 2)/index.html">
 <meta property="og:site_name" content="YQL&#39;blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="D. Game with modulo  分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。  最开始想的是直接1到2e9进行二分，发现会超过60次。12345678910111213141516171819202122232425262728293031323334353637383">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-24T14:50:51.804Z">
+<meta property="og:updated_time" content="2019-01-24T16:41:41.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="codeforces 534D">
+<meta name="twitter:description" content="D. Game with modulo  分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。  最开始想的是直接1到2e9进行二分，发现会超过60次。12345678910111213141516171819202122232425262728293031323334353637383">
 
     
     <link rel="alternative" href="/atom.xml" title="YQL&#39;blog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2019/01/24/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2019/01/25/Codeforces Round #534 (Div. 2)/" title="codeforces 534D" itemprop="url">codeforces 534D</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="John Doe" target="_blank" itemprop="author">John Doe</a>
 		
   </p><p class="article-time">
-    <time datetime="2019-01-24T14:50:51.803Z" itemprop="datePublished"> Published 2019-01-24</time>
+    <time datetime="2019-01-24T16:18:31.000Z" itemprop="datePublished"> Published 2019-01-25</time>
     
   </p>
 </header>
@@ -97,19 +97,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			
 		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+		<p><a href="http://codeforces.com/contest/1104/problem/D" target="_blank" rel="noopener">D. Game with modulo</a><br>  分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。<br>  最开始想的是直接1到2e9进行二分，发现会超过60次。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">long long int a[50],l,r,m;</span><br><span class="line">char f[100];</span><br><span class="line">int main()</span><br><span class="line">&#123;		</span><br><span class="line">	int i,j,n;</span><br><span class="line">	a[0]=0;</span><br><span class="line">	a[1]=1;</span><br><span class="line">	for(i=2;i&lt;=32;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i]=a[i-1]*2;</span><br><span class="line">	&#125;</span><br><span class="line">	while(scanf(&quot; %s&quot;,f)!=EOF)</span><br><span class="line">	&#123;</span><br><span class="line">		if(f[0]!=&apos;s&apos;)</span><br><span class="line">		break;</span><br><span class="line">		char c;</span><br><span class="line">		for(i=0;i&lt;=30;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;? %lld %lld\n&quot;,a[i],a[i+1]);</span><br><span class="line">			fflush(stdout);</span><br><span class="line">			scanf(&quot; %c&quot;,&amp;c);</span><br><span class="line">			if(c==&apos;x&apos;)</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">		if(a[i]==0)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;! 1\n&quot;);</span><br><span class="line">			fflush(stdout);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			l=a[i]+1,r=a[i+1];</span><br><span class="line">			while(l&lt;r)</span><br><span class="line">			&#123;</span><br><span class="line">				m=(l+r)/2;</span><br><span class="line">				printf(&quot;? %lld %lld\n&quot;,m,l-1);</span><br><span class="line">				fflush(stdout);</span><br><span class="line">				scanf(&quot; %c&quot;,&amp;c);</span><br><span class="line">				if(c==&apos;x&apos;)</span><br><span class="line">				l=m+1;</span><br><span class="line">				else</span><br><span class="line">				r=m;</span><br><span class="line">			&#125;</span><br><span class="line">			printf(&quot;! %lld\n&quot;,l);</span><br><span class="line">			fflush(stdout);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -122,7 +114,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2019/01/24/hello-world/" data-title="Hello World | YQL&#39;blog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2019/01/25/Codeforces Round #534 (Div. 2)/" data-title="codeforces 534D | YQL&#39;blog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -135,14 +127,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev">
- <a href="/2019/01/25/Codeforces Round #534 (Div. 2)/" title="codeforces 534D">
-  <strong>上一篇：</strong><br>
-  <span>
-  codeforces 534D</span>
+
+<div class="next">
+<a href="/2019/01/24/hello-world/" title="Hello World">
+ <strong>下一篇：</strong><br> 
+ <span>Hello World
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -156,7 +148,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ 
  
   </div>
 
