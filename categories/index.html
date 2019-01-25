@@ -327,6 +327,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -403,6 +406,32 @@
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/qq_40093905" title="myself" target="_blank">myself</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/qq_41117236" title="Aaverer" target="_blank">Aaverer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/nemaleswang" title="Nemaleswang" target="_blank">Nemaleswang</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/baodream" title="baodream" target="_blank">baodream</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -599,6 +628,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'uKLle6PJEWgfTeD9yNQpjD6p-gzGzoHsz# your leancloud application appid',
+        appKey: 'SnxVqzlRNuVSzSdvYf3yCkEJ# your leancloud application appkey',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
