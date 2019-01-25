@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/01/25/codeforces-534D/</loc>
+    
+    <lastmod>2019-01-25T15:40:49.980Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2019-01-25T14:00:48.713Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2019-01-25T13:59:01.864Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/25/codeforces-534D/</loc>
-    
-    <lastmod>2019-01-24T17:19:45.029Z</lastmod>
     
   </url>
   
