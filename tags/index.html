@@ -147,7 +147,17 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"><script>
+    (function(){
+        if(''){
+            if (prompt('This is a private blog') !== ''){
+                alert('Password error');
+                history.back();
+            }
+        }
+    })();
+</script>
+<div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
