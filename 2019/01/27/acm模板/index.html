@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="模板,">
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="YQL&#39;blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="数据结构线段树线段树的单点修改123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263const int maxn=1e6+5;int a[maxn];    //存每个数的值struct node&amp;#123;    in">
+<meta name="keywords" content="模板">
+<meta property="og:type" content="article">
+<meta property="og:title" content="acm模板">
+<meta property="og:url" content="http://yoursite.com/2019/01/27/acm模板/index.html">
 <meta property="og:site_name" content="YQL&#39;blog">
+<meta property="og:description" content="数据结构线段树线段树的单点修改123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263const int maxn=1e6+5;int a[maxn];    //存每个数的值struct node&amp;#123;    in">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-27T13:06:56.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YQL&#39;blog">
+<meta name="twitter:title" content="acm模板">
+<meta name="twitter:description" content="数据结构线段树线段树的单点修改123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263const int maxn=1e6+5;int a[maxn];    //存每个数的值struct node&amp;#123;    in">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/27/acm模板/">
 
 
 
 
 
-  <title>YQL'blog</title>
+  <title>acm模板 | YQL'blog</title>
   
 
 
@@ -142,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -288,9 +292,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -320,9 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/27/acm模板/" itemprop="url">acm模板</a></h1>
+          <h1 class="post-title" itemprop="name headline">acm模板</h1>
         
 
         <div class="post-meta">
@@ -382,9 +384,7 @@
       
 
       
-        
-          
-            <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><h4 id="线段树的单点修改"><a href="#线段树的单点修改" class="headerlink" title="线段树的单点修改"></a>线段树的单点修改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">const int maxn=1e6+5;</span><br><span class="line">int a[maxn];    //存每个数的值</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    int sum;</span><br><span class="line">    int ll,rr;</span><br><span class="line">&#125;tree[maxn*4];</span><br><span class="line"></span><br><span class="line">void Pushup(int id)       //区间合并</span><br><span class="line">&#123;</span><br><span class="line">    tree[id].sum=tree[id*2].sum+tree[id*2+1].sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Pushdown()     //区间下放，进行区间修改的时候用到</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Build(int id,int ll,int rr)        //建树</span><br><span class="line">&#123;</span><br><span class="line">    tree[id].ll=ll;</span><br><span class="line">    tree[id].rr=rr;</span><br><span class="line">    if(ll==rr)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[id].sum=a[ll];</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    int mid=(ll+rr)/2;</span><br><span class="line">    //mid=ll+rr&gt;&gt;1;</span><br><span class="line">    Build(id*2,ll,mid);</span><br><span class="line">    Build(id*2+1,mid+1,rr);</span><br><span class="line">    //Build(id&lt;&lt;1,ll,mid);</span><br><span class="line">    //Build(id&lt;&lt;1|1,mid+1,rr);</span><br><span class="line">    Pushup(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Update(int id,int x,int y)       //修改</span><br><span class="line">&#123;</span><br><span class="line">    if(tree[id].ll==tree[id].rr)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[id].sum=y;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    int mid=(tree[id].ll+tree[id].rr)/2;</span><br><span class="line">    if(x&lt;=mid)</span><br><span class="line">        Update(id*2,x,y);</span><br><span class="line">    else</span><br><span class="line">        Update(id*2+1,x,y);</span><br><span class="line">    Pushup(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int Query(int id,int x,int y)        //查询</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;=tree[id].ll&amp;&amp;tree[id].rr&lt;=y)//到头的情况</span><br><span class="line">        return tree[id].sum;</span><br><span class="line">    int mid=(tree[id].ll+tree[id].rr)/2;</span><br><span class="line">    if(y&lt;=mid)                  //只需要访问左边</span><br><span class="line">        return Query(id*2,x,y);</span><br><span class="line">    else if(x&gt;=mid+1)</span><br><span class="line">        return Query(id*2+1,x,y);</span><br><span class="line">    else</span><br><span class="line">        return Query(id*2,x,y)+Query(id*2+1,x,y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><h4 id="线段树的单点修改"><a href="#线段树的单点修改" class="headerlink" title="线段树的单点修改"></a>线段树的单点修改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">const int maxn=1e6+5;</span><br><span class="line">int a[maxn];    //存每个数的值</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    int sum;</span><br><span class="line">    int ll,rr;</span><br><span class="line">&#125;tree[maxn*4];</span><br><span class="line"></span><br><span class="line">void Pushup(int id)       //区间合并</span><br><span class="line">&#123;</span><br><span class="line">    tree[id].sum=tree[id*2].sum+tree[id*2+1].sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Pushdown()     //区间下放，进行区间修改的时候用到</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Build(int id,int ll,int rr)        //建树</span><br><span class="line">&#123;</span><br><span class="line">    tree[id].ll=ll;</span><br><span class="line">    tree[id].rr=rr;</span><br><span class="line">    if(ll==rr)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[id].sum=a[ll];</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    int mid=(ll+rr)/2;</span><br><span class="line">    //mid=ll+rr&gt;&gt;1;</span><br><span class="line">    Build(id*2,ll,mid);</span><br><span class="line">    Build(id*2+1,mid+1,rr);</span><br><span class="line">    //Build(id&lt;&lt;1,ll,mid);</span><br><span class="line">    //Build(id&lt;&lt;1|1,mid+1,rr);</span><br><span class="line">    Pushup(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Update(int id,int x,int y)       //修改</span><br><span class="line">&#123;</span><br><span class="line">    if(tree[id].ll==tree[id].rr)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[id].sum=y;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    int mid=(tree[id].ll+tree[id].rr)/2;</span><br><span class="line">    if(x&lt;=mid)</span><br><span class="line">        Update(id*2,x,y);</span><br><span class="line">    else</span><br><span class="line">        Update(id*2+1,x,y);</span><br><span class="line">    Pushup(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int Query(int id,int x,int y)        //查询</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;=tree[id].ll&amp;&amp;tree[id].rr&lt;=y)//到头的情况</span><br><span class="line">        return tree[id].sum;</span><br><span class="line">    int mid=(tree[id].ll+tree[id].rr)/2;</span><br><span class="line">    if(y&lt;=mid)                  //只需要访问左边</span><br><span class="line">        return Query(id*2,x,y);</span><br><span class="line">    else if(x&gt;=mid+1)</span><br><span class="line">        return Query(id*2+1,x,y);</span><br><span class="line">    else</span><br><span class="line">        return Query(id*2,x,y)+Query(id*2+1,x,y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="线段树的区间修改"><a href="#线段树的区间修改" class="headerlink" title="线段树的区间修改"></a>线段树的区间修改</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">const int maxn=1e6+5;</span><br><span class="line">long long int a[maxn];</span><br><span class="line">long long int lazy[maxn*4];    //存每个数的值</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">	long long int sum;</span><br><span class="line">	long long int ll,rr;</span><br><span class="line">&#125;tree[maxn*4];</span><br><span class="line">void Pushup(int id)       //区间合并</span><br><span class="line">&#123;</span><br><span class="line">    tree[id].sum=tree[id*2].sum+tree[id*2+1].sum;</span><br><span class="line">&#125;</span><br><span class="line">void Pushdown(int id)     //区间下放，进行区间修改的时候用到</span><br><span class="line">&#123;</span><br><span class="line">    if(lazy[id])</span><br><span class="line">    &#123;</span><br><span class="line">        tree[id*2].sum+=lazy[id]*(tree[id*2].rr-tree[id*2].ll+1);</span><br><span class="line">        tree[id*2+1].sum+=lazy[id]*(tree[id*2+1].rr-tree[id*2+1].ll+1);</span><br><span class="line">        lazy[id*2]+=lazy[id];</span><br><span class="line">        lazy[id*2+1]+=lazy[id];</span><br><span class="line">        lazy[id]=0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void Build(int id,int ll,int rr)        //建树</span><br><span class="line">&#123;</span><br><span class="line">    lazy[id]=0;</span><br><span class="line">    tree[id].ll=ll;</span><br><span class="line">    tree[id].rr=rr;</span><br><span class="line">    if(ll==rr)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[id].sum=a[ll];</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    int mid=(ll+rr)/2;</span><br><span class="line">    //mid=ll+rr&gt;&gt;1;</span><br><span class="line">    //Build(ltree);</span><br><span class="line">    //Build(rtree);</span><br><span class="line">    Build(id&lt;&lt;1,ll,mid);</span><br><span class="line">    Build(id&lt;&lt;1|1,mid+1,rr);</span><br><span class="line">    Pushup(id);</span><br><span class="line">&#125;</span><br><span class="line">void Update(int id,int x,int y,int z)       //修改</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;=tree[id].ll&amp;&amp;tree[id].rr&lt;=y)</span><br><span class="line">    &#123;</span><br><span class="line">        tree[id].sum+=z*(tree[id].rr-tree[id].ll+1);</span><br><span class="line">        lazy[id]+=z;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    int mid=(tree[id].ll+tree[id].rr)/2;</span><br><span class="line">    Pushdown(id);</span><br><span class="line">    if(y&lt;=mid)</span><br><span class="line">        Update(id*2,x,y,z);</span><br><span class="line">    else if(x&gt;=mid+1)</span><br><span class="line">        Update(id*2+1,x,y,z);</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        Update(id*2,x,y,z);</span><br><span class="line">        Update(id*2+1,x,y,z);</span><br><span class="line">    &#125;</span><br><span class="line">    Pushup(id);</span><br><span class="line">&#125;</span><br><span class="line">long long int Query(int id,int x,int y)        //查询</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;=tree[id].ll&amp;&amp;tree[id].rr&lt;=y)//到头的情况</span><br><span class="line">        return tree[id].sum;</span><br><span class="line">    int mid=(tree[id].ll+tree[id].rr)/2;</span><br><span class="line">    Pushdown(id);</span><br><span class="line">    if(y&lt;=mid)                  //只需要访问左边</span><br><span class="line">        return Query(id*2,x,y);</span><br><span class="line">    else if(x&gt;=mid+1)</span><br><span class="line">        return Query(id*2+1,x,y);</span><br><span class="line">    else</span><br><span class="line">        return Query(id*2,x,y)+Query(id*2+1,x,y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="主席树"><a href="#主席树" class="headerlink" title="主席树"></a>主席树</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int N = 100000 + 5;</span><br><span class="line"></span><br><span class="line">int a[N], b[N], rt[N * 20], ls[N * 20], rs[N * 20], sum[N * 20];</span><br><span class="line"></span><br><span class="line">int n, k, tot, sz, ql, qr, x, q, T;</span><br><span class="line"></span><br><span class="line">void Build(int&amp; o, int l, int r)&#123;</span><br><span class="line">    o = ++ tot;</span><br><span class="line">    sum[o] = 0;</span><br><span class="line">    if(l == r) return;</span><br><span class="line">    int m = (l + r) &gt;&gt; 1;</span><br><span class="line">    Build(ls[o], l, m);</span><br><span class="line">    Build(rs[o], m + 1, r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void update(int&amp; o, int l, int r, int last, int p)&#123;</span><br><span class="line">    o = ++ tot;</span><br><span class="line">    ls[o] = ls[last];</span><br><span class="line">    rs[o] = rs[last];</span><br><span class="line">    sum[o] = sum[last] + 1;</span><br><span class="line">    if(l == r) return;</span><br><span class="line">    int m = (l + r) &gt;&gt; 1;</span><br><span class="line">    if(p &lt;= m)  update(ls[o], l, m, ls[last], p);</span><br><span class="line">    else update(rs[o], m + 1, r, rs[last], p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int query(int ss, int tt, int l, int r, int k)&#123;</span><br><span class="line">    if(l == r) return l;</span><br><span class="line">    int m = (l + r) &gt;&gt; 1;</span><br><span class="line">    int cnt = sum[ls[tt]] - sum[ls[ss]];</span><br><span class="line">    if(k &lt;= cnt) return query(ls[ss], ls[tt], l, m, k);</span><br><span class="line">    else return query(rs[ss], rs[tt], m + 1, r, k - cnt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void work()&#123;</span><br><span class="line">    scanf(&quot;%d%d%d&quot;, &amp;ql, &amp;qr, &amp;x);</span><br><span class="line">    int ans = query(rt[ql - 1], rt[qr], 1, sz, x);</span><br><span class="line">    printf(&quot;%d\n&quot;, b[ans]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;T);</span><br><span class="line">    while(T--)&#123;</span><br><span class="line">        scanf(&quot;%d%d&quot;, &amp;n, &amp;q);</span><br><span class="line">        for(int i = 1; i &lt;= n; i ++) scanf(&quot;%d&quot;, a + i), b[i] = a[i];</span><br><span class="line">        sort(b + 1, b + n + 1);</span><br><span class="line">        sz = unique(b + 1, b + n + 1) - (b + 1);</span><br><span class="line">        tot = 0;</span><br><span class="line">        Build(rt[0],1, sz);</span><br><span class="line">        //for(int i = 0; i &lt;= 4 * n; i ++)printf(&quot;%d,rt =  %d,ls =  %d, rs = %d, sum = %d\n&quot;, i, rt[i], ls[i], rs[i], sum[i]);</span><br><span class="line">        for(int i = 1; i &lt;= n; i ++)a[i] = lower_bound(b + 1, b + sz + 1, a[i]) - b;</span><br><span class="line">        for(int i = 1; i &lt;= n; i ++)update(rt[i], 1, sz, rt[i - 1], a[i]);</span><br><span class="line">        //for(int i = 0; i &lt;= 5 * n; i ++)printf(&quot;%d,rt =  %d,ls =  %d, rs = %d, sum = %d\n&quot;, i, rt[i], ls[i], rs[i], sum[i]);</span><br><span class="line">        while(q --)work();</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int tree[1000000],n;</span><br><span class="line">int lowbit(int x)</span><br><span class="line">&#123;</span><br><span class="line"> return x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line">int Query(int x)//查询x项的前缀和 ； </span><br><span class="line">&#123;</span><br><span class="line"> int res=0;</span><br><span class="line"> while(x)</span><br><span class="line"> &#123;</span><br><span class="line">  res+=tree[x];</span><br><span class="line">  x-=lowbit(x); </span><br><span class="line"> &#125;</span><br><span class="line"> return res;</span><br><span class="line">&#125;</span><br><span class="line">void Add(int x,int v)//在x位加v； </span><br><span class="line">&#123;</span><br><span class="line"> while(x&lt;=n)</span><br><span class="line"> &#123;</span><br><span class="line">  tree[x]+=v;</span><br><span class="line">  x+=lowbit(x);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"> int a[100000],x;</span><br><span class="line"> scanf(&quot;%d %d&quot;,&amp;n,&amp;x);</span><br><span class="line"> for(int i=1;i&lt;=n;i++)</span><br><span class="line"> &#123;</span><br><span class="line">  scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line"> &#125;</span><br><span class="line"> for(int i=1;i&lt;=n;i++)</span><br><span class="line"> &#123;</span><br><span class="line">  Add(i,a[i]);//树状数组的预处理，初始化 </span><br><span class="line"> &#125;</span><br><span class="line"> printf(&quot;%d\n&quot;,Query(x));</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -397,8 +397,6 @@
 <h3 id="组合数学"><a href="#组合数学" class="headerlink" title="组合数学"></a>组合数学</h3><h3 id="计算数学"><a href="#计算数学" class="headerlink" title="计算数学"></a>计算数学</h3><h4 id="凸包"><a href="#凸包" class="headerlink" title="凸包"></a>凸包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">const int N=1e5+5;</span><br><span class="line">const double eps=1e-6;</span><br><span class="line">int n,top;</span><br><span class="line">double len,S;</span><br><span class="line">struct Point &#123; double x,y; &#125; a[N],b[N];</span><br><span class="line">double dis(Point x,Point y)</span><br><span class="line">&#123;</span><br><span class="line">	return sqrt((x.x-y.x)*(x.x-y.x)+(x.y-y.y)*(x.y-y.y));</span><br><span class="line">&#125;</span><br><span class="line">double Cross(Point x,Point y,Point z)</span><br><span class="line">&#123;</span><br><span class="line">	return (x.x-z.x)*(y.y-z.y)-(x.y-z.y)*(y.x-z.x);</span><br><span class="line">&#125;</span><br><span class="line">double Cross(Point x,Point y)</span><br><span class="line">&#123;</span><br><span class="line">	return x.x*y.y-x.y*y.x;</span><br><span class="line">&#125;</span><br><span class="line">bool cmp(const Point &amp;x,const Point &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">	double t=Cross(x,y,a[1]);return abs(t)&gt;eps?t&gt;0:dis(a[1],x)&lt;dis(a[1],y);</span><br><span class="line">&#125;</span><br><span class="line">inline void Graham()</span><br><span class="line">&#123;</span><br><span class="line">	int t=1;</span><br><span class="line">	for(int i=2;i&lt;=n;i++)</span><br><span class="line">	  if(a[i].x&lt;a[t].x||(a[i].x==a[t].x&amp;&amp;a[i].y&lt;a[t].y)) t=i;</span><br><span class="line">	if(t!=1) std::swap(a[t],a[1]);</span><br><span class="line">	std::sort(a+2,a+n+1,cmp);</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		while(top&gt;1&amp;&amp;Cross(a[i],b[top],b[top-1])&gt;=0) top--;</span><br><span class="line">		b[++top]=a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	b[top+1]=b[1];</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">	for(int i=1;i&lt;=n;i++) scanf(&quot;%lf%lf&quot;,&amp;a[i].x,&amp;a[i].y);</span><br><span class="line">	Graham();//求凸包的点 </span><br><span class="line">	for(int i=1;i&lt;=top;i++) len+=dis(b[i],b[i+1]);</span><br><span class="line">	printf(&quot;L: %.8lf\n&quot;,len);//求凸包的长度 </span><br><span class="line">	for(int i=1;i&lt;=top;i++) S+=Cross(b[i],b[i+1]);</span><br><span class="line">	printf(&quot;S: %.8lf\n&quot;,S/2);//求凸包的面积 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="点旋转"><a href="#点旋转" class="headerlink" title="点旋转"></a>点旋转</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">假设对图片上任意点(x,y)，绕一个坐标点(rx0,ry0)逆时针旋转a角度后的新的坐标设为(x0, y0)，有公式：</span><br><span class="line">    x0= (x - rx0)*cos(a) - (y - ry0)*sin(a) + rx0 ;</span><br><span class="line">    y0= (x - rx0)*sin(a) + (y - ry0)*cos(a) + ry0 ;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -407,23 +405,98 @@
 
     <div>
   
+    <div>
+
+    <div style="text-align:center;color: #ccc;font-size:14px;">-------------END-------------</div>
+
+</div>
+  
 </div>
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>You are really my little darling</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
 
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Quanlin Yan 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Quanlin Yan 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Quanlin Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/01/27/acm模板/" title="acm模板">http://yoursite.com/2019/01/27/acm模板/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/模板/" rel="tag"># 模板</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/26/kunagbin专题一-kmp/" rel="next" title="kunagbin专题一 kmp">
+                <i class="fa fa-chevron-left"></i> kunagbin专题一 kmp
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -433,506 +506,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/26/kunagbin专题一-kmp/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Quanlin Yan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YQL'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/26/kunagbin专题一-kmp/" itemprop="url">kunagbin专题一 kmp</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-26T22:11:53+08:00">
-                2019-01-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/VJ/" itemprop="url" rel="index">
-                    <span itemprop="name">VJ</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/26/kunagbin专题一-kmp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/26/kunagbin专题一-kmp/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <table>
-<thead>
-<tr>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>D</th>
-<th>E</th>
-<th>F</th>
-<th>G</th>
-<th>H</th>
-<th>I</th>
-<th>J</th>
-<th>K</th>
-<th>L</th>
-<th>M</th>
-<th>N</th>
-<th>O</th>
-<th>P</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td></td>
-<td></td>
-<td></td>
-<td>√</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/26/kunagbin专题一-kmp/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    <div>
-  
-</div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/codeforces-534D/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Quanlin Yan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YQL'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/25/codeforces-534D/" itemprop="url">codeforces 534D</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-25T00:18:31+08:00">
-                2019-01-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/codeforces/" itemprop="url" rel="index">
-                    <span itemprop="name">codeforces</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/25/codeforces-534D/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/codeforces-534D/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="http://codeforces.com/contest/1104/problem/D" target="_blank" rel="noopener">D. Game with modulo</a><br>  分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。<br>  最开始想的是直接1到2e9进行二分，发现会超过60次。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/25/codeforces-534D/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    <div>
-  
-</div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Quanlin Yan">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YQL'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/24/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T22:50:51+08:00">
-                2019-01-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/24/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/24/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/24/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    <div>
-  
-</div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -940,6 +518,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -960,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1056,6 +650,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线段树"><span class="nav-number">1.1.</span> <span class="nav-text">线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线段树的单点修改"><span class="nav-number">1.1.1.</span> <span class="nav-text">线段树的单点修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线段树的区间修改"><span class="nav-number">1.1.2.</span> <span class="nav-text">线段树的区间修改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主席树"><span class="nav-number">1.2.</span> <span class="nav-text">主席树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树状数组"><span class="nav-number">1.3.</span> <span class="nav-text">树状数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#st表"><span class="nav-number">1.4.</span> <span class="nav-text">st表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串"><span class="nav-number">2.</span> <span class="nav-text">字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kmp"><span class="nav-number">2.1.</span> <span class="nav-text">kmp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ac自动机"><span class="nav-number">2.2.</span> <span class="nav-text">ac自动机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数学"><span class="nav-number">3.</span> <span class="nav-text">数学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数论"><span class="nav-number">3.1.</span> <span class="nav-text">数论</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#快速幂"><span class="nav-number">3.1.1.</span> <span class="nav-text">快速幂</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#exgcd"><span class="nav-number">3.1.2.</span> <span class="nav-text">exgcd</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BM"><span class="nav-number">3.1.3.</span> <span class="nav-text">BM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合数学"><span class="nav-number">3.2.</span> <span class="nav-text">组合数学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算数学"><span class="nav-number">3.3.</span> <span class="nav-text">计算数学</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#凸包"><span class="nav-number">3.3.1.</span> <span class="nav-text">凸包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点旋转"><span class="nav-number">3.3.2.</span> <span class="nav-text">点旋转</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1205,6 +815,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
