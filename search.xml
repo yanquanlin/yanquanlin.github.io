@@ -20,8 +20,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[codeforces 534D]]></title>
-    <url>%2F2019%2F01%2F25%2Fcodeforces-534D%2F</url>
+    <title><![CDATA[codeforces-534D2-D]]></title>
+    <url>%2F2019%2F01%2F25%2Fcodeforces-534D2-D%2F</url>
     <content type="text"><![CDATA[D. Game with modulo 分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。 最开始想的是直接1到2e9进行二分，发现会超过60次。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;stdio.h&gt;long long int a[50],l,r,m;char f[100];int main()&#123; int i,j,n; a[0]=0; a[1]=1; for(i=2;i&lt;=32;i++) &#123; a[i]=a[i-1]*2; &#125; while(scanf(&quot; %s&quot;,f)!=EOF) &#123; if(f[0]!=&apos;s&apos;) break; char c; for(i=0;i&lt;=30;i++) &#123; printf(&quot;? %lld %lld\n&quot;,a[i],a[i+1]); fflush(stdout); scanf(&quot; %c&quot;,&amp;c); if(c==&apos;x&apos;) break; &#125; if(a[i]==0) &#123; printf(&quot;! 1\n&quot;); fflush(stdout); &#125; else &#123; l=a[i]+1,r=a[i+1]; while(l&lt;r) &#123; m=(l+r)/2; printf(&quot;? %lld %lld\n&quot;,m,l-1); fflush(stdout); scanf(&quot; %c&quot;,&amp;c); if(c==&apos;x&apos;) l=m+1; else r=m; &#125; printf(&quot;! %lld\n&quot;,l); fflush(stdout); &#125; &#125; return 0; &#125;]]></content>
       <categories>
         <category>codeforces</category>
