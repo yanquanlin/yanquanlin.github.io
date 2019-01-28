@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-27T13:25:55.290Z</updated>
+  <updated>2019-01-28T11:49:35.970Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>E1. Array and Segments(暴力)</title>
+    <link href="http://yoursite.com/2019/01/28/E1-Array-and-Segments-%E6%9A%B4%E5%8A%9B-1/"/>
+    <id>http://yoursite.com/2019/01/28/E1-Array-and-Segments-暴力-1/</id>
+    <published>2019-01-28T11:48:45.000Z</published>
+    <updated>2019-01-28T11:49:35.970Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="http://codeforces.com/contest/1108/problem/E1" target="_blank" rel="noopener">E1. Array and Segments (Easy version)</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>一串长为n的数串，m个区间，选择区间使得该区间的数减一，求最后修改完后数串(max-min)的最大值。<br><a id="more"></a></p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>方法很多，e1是简单，直接暴力即可，对每一位都当做最大值来进行区间选择，我们知道如果使得（max-min)的值最大，则max越大，min越小越好，由于没有加的操作，所以我们只能间接让max最大，即当选定为max后，如果区间包含该位置则不选该区间，如果不包含，则选区间，因为他可能有两种情况，使min更小或者不影响结果。</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int a[1000005];</span><br><span class="line">int b[1000005];</span><br><span class="line">int l[1000005];</span><br><span class="line">int r[1000005];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"> int i,j,m,n,k,sum=0,minn=1000000,memi=1,memn=0,qum;</span><br><span class="line"> scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line"> for(i=1;i&lt;=n;i++)</span><br><span class="line"> &#123;</span><br><span class="line">  scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line"> &#125;</span><br><span class="line"> for(i=1;i&lt;=m;i++)</span><br><span class="line"> &#123;</span><br><span class="line">  scanf(&quot;%d%d&quot;,&amp;l[i],&amp;r[i]);</span><br><span class="line"> &#125;</span><br><span class="line"> for(i=1;i&lt;=n;i++)</span><br><span class="line"> &#123;</span><br><span class="line">  qum=0;</span><br><span class="line">  for(j=1;j&lt;=n;j++)</span><br><span class="line">  b[j]=a[j];</span><br><span class="line">  for(j=1;j&lt;=m;j++)</span><br><span class="line">  &#123;</span><br><span class="line">   if(l[j]&lt;=i&amp;&amp;r[j]&gt;=i)</span><br><span class="line">   &#123;</span><br><span class="line">    </span><br><span class="line">   &#125;</span><br><span class="line">   else</span><br><span class="line">   &#123;</span><br><span class="line">    qum++;</span><br><span class="line">    for(k=l[j];k&lt;=r[j];k++)</span><br><span class="line">    b[k]--;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  minn=b[1];</span><br><span class="line">  for(j=2;j&lt;=n;j++)</span><br><span class="line">  &#123;</span><br><span class="line">   if(b[j]&lt;minn)</span><br><span class="line">   minn=b[j];</span><br><span class="line">  &#125;</span><br><span class="line">  if(sum&lt;a[i]-minn)</span><br><span class="line">  &#123;</span><br><span class="line">   memn=qum;</span><br><span class="line">   memi=i;</span><br><span class="line">   sum=a[i]-minn;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> printf(&quot;%d\n&quot;,sum);</span><br><span class="line"> printf(&quot;%d\n&quot;,memn);</span><br><span class="line"> int dum=0;</span><br><span class="line"> for(i=1;i&lt;=m;i++)</span><br><span class="line"> &#123;</span><br><span class="line">  if(l[i]&lt;=memi&amp;&amp;r[i]&gt;=memi)</span><br><span class="line">   &#123;</span><br><span class="line">    </span><br><span class="line">   &#125;</span><br><span class="line">   else</span><br><span class="line">   &#123;</span><br><span class="line">    dum++;</span><br><span class="line">    if(dum==memn)</span><br><span class="line">    printf(&quot;%d\n&quot;,i);</span><br><span class="line">    else</span><br><span class="line">    printf(&quot;%d &quot;,i);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> return 0;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;链接&quot;&gt;&lt;a href=&quot;#链接&quot; class=&quot;headerlink&quot; title=&quot;链接&quot;&gt;&lt;/a&gt;链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/contest/1108/problem/E1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;E1. Array and Segments (Easy version)&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;一串长为n的数串，m个区间，选择区间使得该区间的数减一，求最后修改完后数串(max-min)的最大值。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="codeforces" scheme="http://yoursite.com/categories/codeforces/"/>
+    
+    
+      <category term="暴力" scheme="http://yoursite.com/tags/%E6%9A%B4%E5%8A%9B/"/>
+    
+      <category term="codeforces" scheme="http://yoursite.com/tags/codeforces/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>D. Game with modulo(交互，二分)</title>
+    <link href="http://yoursite.com/2019/01/28/D-Game-with-modulo-%E4%BA%A4%E4%BA%92%EF%BC%8C%E4%BA%8C%E5%88%86/"/>
+    <id>http://yoursite.com/2019/01/28/D-Game-with-modulo-交互，二分/</id>
+    <published>2019-01-28T11:42:34.000Z</published>
+    <updated>2019-01-28T11:47:42.233Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="http://codeforces.com/contest/1104/problem/D" target="_blank" rel="noopener">D. Game with modulo</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你一个a，你可以输入x,y进行询问，返回”x”, 如果 (x mod a)≥(y mod a)，返回”y”,如果(x mod a)&lt;(y mod a)，最多60次询问，请设计一个方案求出a的值。<br><a id="more"></a></p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。<br>  最开始想的是直接1到2e9进行二分，发现会超过60次。</p><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">long long int a[50],l,r,m;</span><br><span class="line">char f[100];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int i,j,n;</span><br><span class="line">a[0]=0;</span><br><span class="line">a[1]=1;</span><br><span class="line">for(i=2;i&lt;=32;i++)</span><br><span class="line">&#123;</span><br><span class="line">a[i]=a[i-1]*2;</span><br><span class="line">&#125;</span><br><span class="line">while(scanf(&quot; %s&quot;,f)!=EOF)</span><br><span class="line">&#123;</span><br><span class="line">if(f[0]!=&apos;s&apos;)</span><br><span class="line">break;</span><br><span class="line">char c;</span><br><span class="line">for(i=0;i&lt;=30;i++)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;? %lld %lld\n&quot;,a[i],a[i+1]);</span><br><span class="line">fflush(stdout);</span><br><span class="line">scanf(&quot; %c&quot;,&amp;c);</span><br><span class="line">if(c==&apos;x&apos;)</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">if(a[i]==0)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;! 1\n&quot;);</span><br><span class="line">fflush(stdout);</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">l=a[i]+1,r=a[i+1];</span><br><span class="line">while(l&lt;r)</span><br><span class="line">&#123;</span><br><span class="line">m=(l+r)/2;</span><br><span class="line">printf(&quot;? %lld %lld\n&quot;,m,l-1);</span><br><span class="line">fflush(stdout);</span><br><span class="line">scanf(&quot; %c&quot;,&amp;c);</span><br><span class="line">if(c==&apos;x&apos;)</span><br><span class="line">l=m+1;</span><br><span class="line">else</span><br><span class="line">r=m;</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;! %lld\n&quot;,l);</span><br><span class="line">fflush(stdout);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return 0;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;链接&quot;&gt;&lt;a href=&quot;#链接&quot; class=&quot;headerlink&quot; title=&quot;链接&quot;&gt;&lt;/a&gt;链接&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://codeforces.com/contest/1104/problem/D&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;D. Game with modulo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;题意&quot;&gt;&lt;a href=&quot;#题意&quot; class=&quot;headerlink&quot; title=&quot;题意&quot;&gt;&lt;/a&gt;题意&lt;/h2&gt;&lt;p&gt;给你一个a，你可以输入x,y进行询问，返回”x”, 如果 (x mod a)≥(y mod a)，返回”y”,如果(x mod a)&amp;lt;(y mod a)，最多60次询问，请设计一个方案求出a的值。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="codeforces" scheme="http://yoursite.com/categories/codeforces/"/>
+    
+    
+      <category term="codeforces - 二分" scheme="http://yoursite.com/tags/codeforces-%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="交互" scheme="http://yoursite.com/tags/%E4%BA%A4%E4%BA%92/"/>
+    
+  </entry>
   
   <entry>
     <title>acm模板</title>
@@ -96,30 +146,6 @@
     
     
       <category term="kmp" scheme="http://yoursite.com/tags/kmp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>codeforces-534D2-D</title>
-    <link href="http://yoursite.com/2019/01/25/codeforces-534D2-D/"/>
-    <id>http://yoursite.com/2019/01/25/codeforces-534D2-D/</id>
-    <published>2019-01-24T16:18:31.000Z</published>
-    <updated>2019-01-28T11:16:53.151Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://codeforces.com/contest/1104/problem/D" target="_blank" rel="noopener">D. Game with modulo</a><br>  分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。<br>  最开始想的是直接1到2e9进行二分，发现会超过60次。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">long long int a[50],l,r,m;</span><br><span class="line">char f[100];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int i,j,n;</span><br><span class="line">a[0]=0;</span><br><span class="line">a[1]=1;</span><br><span class="line">for(i=2;i&lt;=32;i++)</span><br><span class="line">&#123;</span><br><span class="line">a[i]=a[i-1]*2;</span><br><span class="line">&#125;</span><br><span class="line">while(scanf(&quot; %s&quot;,f)!=EOF)</span><br><span class="line">&#123;</span><br><span class="line">if(f[0]!=&apos;s&apos;)</span><br><span class="line">break;</span><br><span class="line">char c;</span><br><span class="line">for(i=0;i&lt;=30;i++)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;? %lld %lld\n&quot;,a[i],a[i+1]);</span><br><span class="line">fflush(stdout);</span><br><span class="line">scanf(&quot; %c&quot;,&amp;c);</span><br><span class="line">if(c==&apos;x&apos;)</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">if(a[i]==0)</span><br><span class="line">&#123;</span><br><span class="line">printf(&quot;! 1\n&quot;);</span><br><span class="line">fflush(stdout);</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">l=a[i]+1,r=a[i+1];</span><br><span class="line">while(l&lt;r)</span><br><span class="line">&#123;</span><br><span class="line">m=(l+r)/2;</span><br><span class="line">printf(&quot;? %lld %lld\n&quot;,m,l-1);</span><br><span class="line">fflush(stdout);</span><br><span class="line">scanf(&quot; %c&quot;,&amp;c);</span><br><span class="line">if(c==&apos;x&apos;)</span><br><span class="line">l=m+1;</span><br><span class="line">else</span><br><span class="line">r=m;</span><br><span class="line">&#125;</span><br><span class="line">printf(&quot;! %lld\n&quot;,l);</span><br><span class="line">fflush(stdout);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return 0;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://codeforces.com/contest/1104/problem/D&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;D. Game with modulo&lt;/a&gt;&lt;br&gt;  分块二分，首先0到1询问，如果返回为x则证明a为1，然后询问（1，2）（2，4）（4，8）……（1e9,2e9)，如果返回为x则证明a在该区间，对区间进行二分查询。&lt;br&gt;  最开始想的是直接1到2e9进行二分，发现会超过60次。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="codeforces" scheme="http://yoursite.com/categories/codeforces/"/>
-    
-    
-      <category term="codeforces" scheme="http://yoursite.com/tags/codeforces/"/>
-    
-      <category term="二分" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%88%86/"/>
     
   </entry>
   
