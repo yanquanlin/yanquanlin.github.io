@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/01/30/Palindrome-Manacher/</loc>
+    
+    <lastmod>2019-01-30T11:35:51.405Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/01/27/acm%E6%A8%A1%E6%9D%BF/</loc>
     
     <lastmod>2019-01-30T11:00:41.140Z</lastmod>

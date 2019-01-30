@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Palindrome (Manacher)]]></title>
+    <url>%2F2019%2F01%2F30%2FPalindrome-Manacher%2F</url>
+    <content type="text"><![CDATA[����A - Palindrome �����������ӻ��Ĵ��ĳ��� ���������ģ���� ���룺1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;vector&gt;#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int Manacher(string s) &#123; // Insert &apos;#&apos; string t = &quot;$#&quot;; for (int i = 0; i &lt; s.size(); ++i) &#123; t += s[i]; t += &quot;#&quot;; &#125; // Process t vector&lt;int&gt; p(t.size(), 0); int mx = 0, id = 0, resLen = 0, resCenter = 0; for (int i = 1; i &lt; t.size(); ++i) &#123; p[i] = mx &gt; i ? min(p[2 * id - i], mx - i) : 1; while (t[i + p[i]] == t[i - p[i]]) ++p[i]; if (mx &lt; i + p[i]) &#123; mx = i + p[i]; id = i; &#125; if (resLen &lt; p[i]) &#123; resLen = p[i]; resCenter = i; &#125; &#125; return resLen - 1;&#125;int main() &#123; string s1; int k=0; while(1) &#123; k++; cin&gt;&gt;s1; if(s1[0]==&apos;E&apos;) break; else &#123; cout&lt;&lt;&quot;Case &quot;&lt;&lt;k&lt;&lt;&quot;: &quot;&lt;&lt;Manacher(s1)&lt;&lt;endl; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>VJ</category>
+      </categories>
+      <tags>
+        <tag>VJ</tag>
+        <tag>Manacher</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[E1. Array and Segments(暴力)]]></title>
     <url>%2F2019%2F01%2F28%2FE1-Array-and-Segments-%E6%9A%B4%E5%8A%9B-1%2F</url>
     <content type="text"><![CDATA[链接E1. Array and Segments (Easy version) 题意一串长为n的数串，m个区间，选择区间使得该区间的数减一，求最后修改完后数串(max-min)的最大值。 题解方法很多，e1是简单，直接暴力即可，对每一位都当做最大值来进行区间选择，我们知道如果使得（max-min)的值最大，则max越大，min越小越好，由于没有加的操作，所以我们只能间接让max最大，即当选定为max后，如果区间包含该位置则不选该区间，如果不包含，则选区间，因为他可能有两种情况，使min更小或者不影响结果。 代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768#include&lt;stdio.h&gt;int a[1000005];int b[1000005];int l[1000005];int r[1000005];int main()&#123; int i,j,m,n,k,sum=0,minn=1000000,memi=1,memn=0,qum; scanf(&quot;%d%d&quot;,&amp;n,&amp;m); for(i=1;i&lt;=n;i++) &#123; scanf(&quot;%d&quot;,&amp;a[i]); &#125; for(i=1;i&lt;=m;i++) &#123; scanf(&quot;%d%d&quot;,&amp;l[i],&amp;r[i]); &#125; for(i=1;i&lt;=n;i++) &#123; qum=0; for(j=1;j&lt;=n;j++) b[j]=a[j]; for(j=1;j&lt;=m;j++) &#123; if(l[j]&lt;=i&amp;&amp;r[j]&gt;=i) &#123; &#125; else &#123; qum++; for(k=l[j];k&lt;=r[j];k++) b[k]--; &#125; &#125; minn=b[1]; for(j=2;j&lt;=n;j++) &#123; if(b[j]&lt;minn) minn=b[j]; &#125; if(sum&lt;a[i]-minn) &#123; memn=qum; memi=i; sum=a[i]-minn; &#125; &#125; printf(&quot;%d\n&quot;,sum); printf(&quot;%d\n&quot;,memn); int dum=0; for(i=1;i&lt;=m;i++) &#123; if(l[i]&lt;=memi&amp;&amp;r[i]&gt;=memi) &#123; &#125; else &#123; dum++; if(dum==memn) printf(&quot;%d\n&quot;,i); else printf(&quot;%d &quot;,i); &#125; &#125; return 0; &#125;]]></content>
@@ -8,8 +20,8 @@
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>codeforces</tag>
         <tag>暴力</tag>
+        <tag>codeforces</tag>
       </tags>
   </entry>
   <entry>
