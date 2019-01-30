@@ -8,8 +8,8 @@
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>暴力</tag>
         <tag>codeforces</tag>
+        <tag>暴力</tag>
       </tags>
   </entry>
   <entry>
@@ -20,7 +20,8 @@
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>codeforces - 二分</tag>
+        <tag>codeforces</tag>
+        <tag>二分</tag>
         <tag>交互</tag>
       </tags>
   </entry>
