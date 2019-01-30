@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>YQL&#39;blog</title>
-  <icon>https://www.gravatar.com/avatar/2e782e8b2b510fe1a8abe19f7cab05aa</icon>
+  <icon>https://www.gravatar.com/avatar/012401d0144c3840277ad74d72ba3f6b</icon>
   <subtitle>acm(jb)er</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>Quanlin Yan</name>
-    <email>yanquanlin@outlook.com#��ϵ����</email>
+    <email>yanquanlin@outlook.com#联系邮箱</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
