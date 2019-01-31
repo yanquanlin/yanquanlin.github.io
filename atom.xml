@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-30T11:50:26.542Z</updated>
+  <updated>2019-01-31T05:03:20.829Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>sort的使用</title>
+    <link href="http://yoursite.com/2019/01/31/sort%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2019/01/31/sort的使用/</id>
+    <published>2019-01-31T04:48:01.000Z</published>
+    <updated>2019-01-31T05:03:20.829Z</updated>
+    
+    <content type="html"><![CDATA[<p>  C++ 中sort 函数及 cmp 自定义规则的使用<br><a id="more"></a><br>需要用到的头文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br></pre></td></tr></table></figure></p><p>需要传两到三个参数，数据类型不限，只要是内定义了大小比较符，我们可以只传两个参数（区间首地址，区间尾地址的下一个地址）例如sort(a,a+n),对从a[0]到a[n-1]的数据进行从小到大的排序，如果想要改变排序方式或者对内部未定义大小比较符的进行排序，我们需要再传个比较函数cmp进去。，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bool cmp(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">    if(x.a!=y.a) return x.a</span><br><span class="line">    if(x.b!=y.b) return x.b&gt;y.b;</span><br><span class="line">    return return x.c&gt;y.c;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">sort(arr,arr+n,cmp);</span><br></pre></td></tr></table></figure></p><p>先按a值升序排列，如果a值相同，再按b值降序排列，如果b还相同，就按c降序排列。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  C++ 中sort 函数及 cmp 自定义规则的使用&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="其他" scheme="http://yoursite.com/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
   
   <entry>
     <title>Palindrome (Manacher)</title>

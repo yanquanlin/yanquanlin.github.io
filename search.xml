@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[sort的使用]]></title>
+    <url>%2F2019%2F01%2F31%2Fsort%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[C++ 中sort 函数及 cmp 自定义规则的使用需要用到的头文件12#include&lt;algorithm&gt;using namespace std; 需要传两到三个参数，数据类型不限，只要是内定义了大小比较符，我们可以只传两个参数（区间首地址，区间尾地址的下一个地址）例如sort(a,a+n),对从a[0]到a[n-1]的数据进行从小到大的排序，如果想要改变排序方式或者对内部未定义大小比较符的进行排序，我们需要再传个比较函数cmp进去。，例如：12345678bool cmp(node x,node y)&#123; if(x.a!=y.a) return x.a if(x.b!=y.b) return x.b&gt;y.b; return return x.c&gt;y.c;&#125; sort(arr,arr+n,cmp); 先按a值升序排列，如果a值相同，再按b值降序排列，如果b还相同，就按c降序排列。]]></content>
+      <tags>
+        <tag>其他</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Palindrome (Manacher)]]></title>
     <url>%2F2019%2F01%2F30%2FPalindrome-Manacher%2F</url>
     <content type="text"><![CDATA[链接A - Palindrome 题意输出最长的子回文串的长度 题解马拉车模板题 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;vector&gt;#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int Manacher(string s) &#123; // Insert &apos;#&apos; string t = &quot;$#&quot;; for (int i = 0; i &lt; s.size(); ++i) &#123; t += s[i]; t += &quot;#&quot;; &#125; // Process t vector&lt;int&gt; p(t.size(), 0); int mx = 0, id = 0, resLen = 0, resCenter = 0; for (int i = 1; i &lt; t.size(); ++i) &#123; p[i] = mx &gt; i ? min(p[2 * id - i], mx - i) : 1; while (t[i + p[i]] == t[i - p[i]]) ++p[i]; if (mx &lt; i + p[i]) &#123; mx = i + p[i]; id = i; &#125; if (resLen &lt; p[i]) &#123; resLen = p[i]; resCenter = i; &#125; &#125; return resLen - 1;&#125;int main() &#123; string s1; int k=0; while(1) &#123; k++; cin&gt;&gt;s1; if(s1[0]==&apos;E&apos;) break; else &#123; cout&lt;&lt;&quot;Case &quot;&lt;&lt;k&lt;&lt;&quot;: &quot;&lt;&lt;Manacher(s1)&lt;&lt;endl; &#125; &#125; return 0;&#125;]]></content>
