@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[弱水三千只取一瓢饮]]></title>
+    <url>%2F2029%2F02%2F03%2F%E5%BC%B1%E6%B0%B4%E4%B8%89%E5%8D%83%E5%8F%AA%E5%8F%96%E4%B8%80%E7%93%A2%E9%A5%AE%2F</url>
+    <content type="text"><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[sort的使用]]></title>
     <url>%2F2019%2F01%2F31%2Fsort%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[C++ 中sort 函数及 cmp 自定义规则的使用需要用到的头文件12#include&lt;algorithm&gt;using namespace std; 需要传两到三个参数，数据类型不限，只要是内定义了大小比较符，我们可以只传两个参数（区间首地址，区间尾地址的下一个地址）例如sort(a,a+n),对从a[0]到a[n-1]的数据进行从小到大的排序，如果想要改变排序方式或者对内部未定义大小比较符的进行排序，我们需要再传个比较函数cmp进去。，例如：12345678bool cmp(node x,node y)&#123; if(x.a!=y.a) return x.a if(x.b!=y.b) return x.b&gt;y.b; return return x.c&gt;y.c;&#125; sort(arr,arr+n,cmp); 先按a值升序排列，如果a值相同，再按b值降序排列，如果b还相同，就按c降序排列。]]></content>
@@ -28,8 +33,8 @@
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>codeforces</tag>
         <tag>暴力</tag>
+        <tag>codeforces</tag>
       </tags>
   </entry>
   <entry>
