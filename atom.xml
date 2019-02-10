@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>YQL&#39;blog</title>
+  <title>YQL&#39;s blog</title>
   <icon>https://www.gravatar.com/avatar/012401d0144c3840277ad74d72ba3f6b</icon>
   <subtitle>acm(jb)er</subtitle>
   <link href="/atom.xml" rel="self"/>
