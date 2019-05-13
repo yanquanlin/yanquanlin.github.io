@@ -6,6 +6,17 @@
     <content type="text"><![CDATA[2019/2/3 这应该是最为生气的一天，早上8点多才睡着，早饭午饭也没吃，你知道我有多伤心吗？原来在我之外还有一个男朋友的存在，原来你的第一次早就不在了，原来我一直就是小三般的存在，如果不是登了你的qq号，可能很久都没办法知道吧，原来空间情侣，游戏情侣不是你的朋友，而是你的另一个男朋友，说实话，真的受不了这个打击甚至想分手，可是后来，在朋友都劝我分手的时候，我妥协了，因为我真的是喜欢你啊，因为喜欢你，舍不得放弃，舍不得离开你，何怡然，我也不知道这样做是对还是错，但是我，从来就没有想过抛弃你或者说离开你，也没有过二心，每次说我有小学妹什么的，我只是不想让你知道的时候不明事实，不想你生气，可是你这样，让我怎么相信你？你们在一起一年多，和我在一起就半年，所以，真的，挺失望的，最后原谅你一次，希望，以后我们都能好好的，希望能平平淡淡的过完余生，我觉得自己以前是足够信任你的，就算你不给我看你的手机 ，不告诉我你的密码，我也只是觉得，你和你朋友之间有什么我不太适合知道的小秘密，真的挺失落的，何怡然，最后一次，希望不要辜负了我的期待，今天开了这个博文，希望以后里面能够充满开心快乐的事，希望这是我们之间的最后一件不愉快。何怡然，我爱你，一辈子，你若不离，我定不弃，以后，我们好好地在一起。]]></content>
   </entry>
   <entry>
+    <title><![CDATA[2019 fjut校赛 J(kmp|exkmp|ntt)]]></title>
+    <url>%2F2019%2F05%2F13%2F2019-fjut%E6%A0%A1%E8%B5%9B-J-kmp-exkmp-ntt%2F</url>
+    <content type="text"><![CDATA[链接第六集，想不到你这个浓眉大眼的都叛变革命了 题意给你一个母串和子串，如果子串改变一个字符能匹配母串，则输出yes，否者输出no 题解方法很多，大佬用的ntt和exkmp，菜鸡的我用的kmp，对母串每个位置分别求个前缀最长能匹配的子串位置，然后存下来，然后对它跑后缀，查在它前面两个的位置匹配的前缀的位置，如果前缀加后缀和加1（容错的1个）等于m（子串长度），则ok，后面就是细节了，因为匹配是最长，可能会出现循环节多了的情况，比如abcabc我们匹配到了abcabc,但是只需要abc，所以长度还得减去循环节，查看是否相等，还有如果匹配长度等于m-1并且后面还有字符则一定也可以，并且如果完全匹配也可以 代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596#include&lt;string.h&gt;#include&lt;stdio.h&gt;int flag;int n,m,next[1000005],next2[1000005];char a[1000005],b[1000005];char aa[1000005],bb[1000005];int ab[1000005];void Getnext()&#123; next[0]=-1; for(int i=1,j=0;i&lt;m;i++,j++) &#123; while(j!=-1&amp;&amp;b[i]!=b[j]) j=next[j]; next[i+1]=j+1; &#125;&#125;void Getnext2()&#123; next2[0]=-1; for(int i=1,j=0;i&lt;m;i++,j++) &#123; while(j!=-1&amp;&amp;bb[i]!=bb[j]) j=next2[j]; next2[i+1]=j+1; &#125;&#125;void KMP()&#123; for(int i=0,j=0;i&lt;n;i++,j++) &#123; while(j!=-1&amp;&amp;a[i]!=b[j]) j=next[j]; ab[i]=j; if(j+2==m&amp;&amp;i&lt;n-1||(j==-1&amp;&amp;j+2==m&amp;&amp;i&lt;n)) &#123; flag=1; &#125; if(j==m-1) flag=1; &#125;&#125;void KMP2()&#123; for(int i=0,j=0;i&lt;n;i++,j++) &#123; while(j!=-1&amp;&amp;aa[i]!=bb[j]) j=next2[j]; if(ab[n-i-3]+j+3==m&amp;&amp;n&gt;=i+3) &#123; flag=1; &#125; else if(ab[n-i-3]+j+3&gt;m&amp;&amp;n&gt;=i+3) &#123; if((ab[n-i-3]+1)%(ab[n-i-3]+1-next[ab[n-i-3]+1])==0&amp;&amp;(ab[n-i-3]+j+3-m)%((ab[n-i-3]+1-next[ab[n-i-3]+1]))==0) &#123; flag=1; &#125; if((j+1)%(j+1-next2[j+1])==0&amp;&amp;(ab[n-i-3]+j+3-m)%(j+1-next2[j+1])==0) &#123; flag=1; &#125; &#125; if(j+2==m&amp;&amp;i&lt;n-1||(j==-1&amp;&amp;j+2==m&amp;&amp;i&lt;n)) &#123; flag=1; &#125; &#125;&#125;int main()&#123; int t; scanf(&quot;%d&quot;,&amp;t); while(t--) &#123; flag=0; scanf(&quot;%s%s&quot;,a,b); //a-&gt;long b-&gt;short n=strlen(a);m=strlen(b); //if(m==1) //flag=1; Getnext(); KMP(); for(int i=0;i&lt;n;i++) &#123; aa[i]=a[n-i-1]; &#125; for(int i=0;i&lt;m;i++) &#123; bb[i]=b[m-i-1]; &#125; Getnext2(); KMP2(); if(m&gt;n) flag=0; if(flag==1) printf(&quot;YES\n&quot;); else printf(&quot;NO\n&quot;); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>fjut</category>
+      </categories>
+      <tags>
+        <tag>-kmp -exkmp -ntt</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ZOJ 4110 Strings in the Pocket (马拉车求回文串数量）]]></title>
     <url>%2F2019%2F04%2F29%2FZOJ-4110-Strings-in-the-Pocket-%E9%A9%AC%E6%8B%89%E8%BD%A6%E6%B1%82%E5%9B%9E%E6%96%87%E4%B8%B2%E6%95%B0%E9%87%8F%EF%BC%89%2F</url>
     <content type="text"><![CDATA[链接K- Strings in the Pocket 题意给你两个字符串ab，可以对a串中的子串进行翻转，问有多少对lr使得翻转后的a串等于b串 题解如果a串等于b串，则就是求a串中的回文串的数目（串的数目可能很多，得开longlong ）如果不一样，一定翻转第一个不相等和最后一个不相等的位置，然后判断翻转后是否相等，然后两边看能不能加特判l==r 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182#include&lt;stdio.h&gt;#include&lt;string.h&gt;#include&lt;algorithm&gt;using namespace std;char a[2000005],b[2000005],s_new[5000005];int p[5000005]; int init()&#123; int len=strlen(a),j=2; s_new[0]=&apos;$&apos;,s_new[1]=&apos;#&apos;; for(int i=0;i&lt;len;i++)&#123; s_new[j++]=a[i]; s_new[j++]=&apos;#&apos;; &#125; s_new[j]=0; return j;&#125;long long int manacher()&#123; long long int res=0; int len=init(),mx=0,id; for(int i=0;i&lt;len;i++)&#123; if(mx&gt;i)p[i]=min(p[2*id-i],mx-i); else p[i]=1; while(s_new[i-p[i]]==s_new[i+p[i]])p[i]++; if(mx&lt;i+p[i])mx=i+p[i],id=i; res+=p[i]/2; &#125; return res;&#125;int main()&#123; int i,j,m,n; int t; scanf(&quot;%d&quot;,&amp;t); while(t--) &#123; scanf(&quot; %s %s&quot;,a,b); n=strlen(a); int flag=-1,maxx=0; for(i=0;i&lt;n;i++) &#123; if(a[i]!=b[i]&amp;&amp;flag==-1) &#123; flag=i; &#125; if(a[i]!=b[i]) &#123; maxx=i; &#125; &#125; if(flag==-1) &#123; long long int cnt=manacher();//除以2是因为这里的字符串之间插入了‘#’ printf(&quot;%lld\n&quot;,cnt); &#125; else &#123; int cnt=1,jj; for(j=flag-1,jj=maxx+1;j&gt;=0,jj&lt;n;j--,jj++) &#123; if(a[j]!=a[jj]||j&lt;0||jj&gt;=n) break; else cnt++; &#125; if(maxx==flag) cnt=0; else &#123; int k; for(j=flag,k=maxx;j&lt;=maxx;j++,k--) &#123; if(a[j]!=b[k]) break; &#125; if(j&lt;=maxx) cnt=0; &#125; printf(&quot;%d\n&quot;,cnt); &#125; &#125; return 0;&#125;]]></content>
@@ -45,8 +56,8 @@
         <category>codeforces</category>
       </categories>
       <tags>
-        <tag>codeforces</tag>
         <tag>暴力</tag>
+        <tag>codeforces</tag>
       </tags>
   </entry>
   <entry>
